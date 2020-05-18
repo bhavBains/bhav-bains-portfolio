@@ -36,7 +36,7 @@ ul {
 /* Side Navigation Icons */
 #fp-nav > ul > li > a > span {
   background-color: #ffff55;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .nav-links,
@@ -45,7 +45,11 @@ ul {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.section-home {
+.navbar-brand {
+  margin: 0.5rem 2rem;
+}
+
+#homepage {
   color: #ffff55;
 }
 
@@ -72,6 +76,12 @@ ul {
 .github:hover {
   background-color: #ffff55;
   color: #000;
+  border: 1px solid #fff;
+}
+
+.github i,
+.resume i {
+  margin: 0 10px;
 }
 
 /* section 2 about me */
@@ -96,9 +106,8 @@ ul {
 }
 
 .myImage img:hover {
-  padding: 0.6rem;
-  transition: all 0.8s;
-  border: solid 2px #ffff55;
+  padding: 0.2rem;
+  transition: all 0.4s;
 }
 
 .myImage img {
@@ -171,9 +180,8 @@ ul {
 }
 
 .project-image img:hover {
-  padding: 0.6rem;
+  padding: 0.2rem;
   transition: all 0.5s;
-  border: solid 4px #ccc;
 }
 
 .project-text {
@@ -205,27 +213,21 @@ ul {
   background: aliceblue;
 }
 
-/* Section 4 Contact Form */
+/* Section 4 Contact */
 .section4-grid {
-  display: grid;
-  padding: 5rem;
-  grid-template-columns: 1fr;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .section4-logo img {
-  height: 250px;
-  width: 250px;
-  padding: 2rem;
-  justify-self: center;
+  height: 400px;
+  width: 400px;
 }
-
-/* todo shake image on hover just a little bit to right and back to position */
 
 .contact-list {
   max-width: 70%;
   text-align: center;
-  justify-self: center;
 }
 
 .contact-list li {
@@ -237,11 +239,11 @@ ul {
 
 .contact-list li:hover {
   background-color: #ffff55;
-  transition: all 0.6s;
+  transition: all 0.5s;
   color: #000;
 }
 
-.contact h3 span {
+.contact > h3 > a > span {
   margin: 0.8rem;
 }
 
@@ -251,8 +253,7 @@ ul {
 
 /* Section 4 ends */
 
-/*Media Query for Mobile Version*/
-@media (max-width: 600px) {
+@media screen and (max-width: 1024px) {
   .typed {
     font-size: 2em;
     line-height: 5rem;
@@ -266,9 +267,9 @@ ul {
   }
 
   .myImage img {
-    width: 300px;
-    height: 250px;
-    margin-top: 3rem;
+    width: 250px;
+    height: 200px;
+    margin-top: 4rem;
   }
 
   .myBio {
@@ -278,6 +279,7 @@ ul {
 
   .myBio p {
     margin-top: 1rem;
+    font-size: 1.2rem;
   }
 
   .info-skills {
@@ -289,8 +291,13 @@ ul {
   .slide {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 3rem;
     margin: auto;
+  }
+
+  .project-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
   }
 
   .project-image img {
@@ -300,60 +307,84 @@ ul {
   }
 
   .project-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   /* section 4 */
-  .section4-grid {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .section4-logo {
-    padding: 0px 50px;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-
   .section4-logo img {
-    padding: 0;
-    margin: 0;
-    width: 200px;
-    height: 200px;
-    border: solid 1px #ccc;
-    border-radius: 35px;
-  }
-
-  .contact-list {
-    padding: 10px 0px;
-    margin: 20px 0px;
-    width: 100%;
+    width: 300px;
+    height: 300px;
   }
 
   /* .contact-list {
-    max-width: 70%;
-    text-align: center;
-    justify-self: center;
+    padding: 10px 0px;
+    margin: 20px 0px;
+    width: 100%;
   } */
 
-  .contact-list li {
+  /* .contact-list li {
     padding: 0;
     border: 0px solid #ccc;
     border-radius: 25px;
     margin: 20px 0;
+  } */
+}
+
+@media screen and (min-width: 1382px) {
+  .navbar {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-brand {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  .contact h3 {
-    /* font-size: 1.5rem; */
+  .myImage > img {
+    width: 200px;
+    height: 150px;
+    margin: 0;
   }
 
-  .contact h3 span {
-    display: block;
-    /* font-size: 0.9rem; */
-    color: #ccc;
+  .myBio {
+    margin: 0;
+    padding: 0;
+  }
+
+  .myBio > p {
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .section4-grid {
+    flex-direction: column;
+  }
+
+  .section4-logo img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .contact-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contact-list li {
+    border: none;
+  }
+
+  .contact > h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
